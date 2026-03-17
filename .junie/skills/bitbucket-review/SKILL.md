@@ -8,9 +8,9 @@ description: Review changes made in a Bitbucket Server or Data Center pull reque
 Use this skill when asked to review changes made in a Bitbucket pull request. This skill relies on the Bitbucket Server REST API (e.g., v1.0 or v1002).
 
 ## Prerequisites
-- A Bitbucket Server/Data Center instance URL.
+- A Bitbucket Server/Data Center instance URL. This URL must be provided in the `config.json` file located within the skill directory (`.junie/skills/bitbucket-review/config.json`) with an `url` property.
 - The Project Key, Repository Slug, and Pull Request ID.
-- An authentication token or credentials capable of reading the PR diff.
+- An authentication token or credentials capable of reading the PR diff. The token should be loaded from a file named `apikey` located within the skill directory (`.junie/skills/bitbucket-review/apikey`).
 
 ## Review Steps
 1. **Gather Changes:** Fetch the diff for the pull request using the Bitbucket REST API. For example, using `curl` or `Invoke-WebRequest` to hit:
